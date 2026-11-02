@@ -1,4 +1,5 @@
-﻿using System.Security.Principal;
+﻿using System.Net.Http.Headers;
+using System.Security.Principal;
 
 namespace ReservatioanWebApplication.Models;
 
@@ -23,5 +24,10 @@ public class Doctor
     public Enum SlotDuration { get; set; }
     public decimal ConsultationFee { get; set; }
     public int AddressId { get; set; }
+
+    public Doctor Add(string firstName, string lastName)
+    {
+        return new Doctor { FirstName = firstName, LastName = lastName };
+    }
     
 }

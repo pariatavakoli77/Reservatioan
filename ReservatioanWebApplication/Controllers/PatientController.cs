@@ -6,12 +6,12 @@ namespace ReservatioanWebApplication.Controllers;
 public class PatientController : ControllerBase
 {
     [HttpPost]
-    public string AddPatient(string name, string lastName)
+    public string Add(string name, string lastName)
     {
         return "";
     }
     [HttpGet]
-    public string GetPatient() 
+    public string Get() 
     {
         return "";
     }
