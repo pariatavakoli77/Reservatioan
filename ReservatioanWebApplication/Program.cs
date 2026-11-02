@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ReservatioanWebApplication.Data;
+using ReservatioanWebApplication.Interfaces;
 using ReservatioanWebApplication.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +19,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddScoped<DoctorService>();
+builder.Services.AddScoped<IDoctorService, DoctorService>();
 
 var app = builder.Build();
 

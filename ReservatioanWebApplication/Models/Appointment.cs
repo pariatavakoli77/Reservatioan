@@ -8,7 +8,8 @@ public class Appointment
     public int Id { get; set; }
     public int DoctorId { get; set; }
     public int PatientId { get; set; }
-    public DateTime Date { get; set; }
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
     public Enum Status { get; set; }
     public string PatientDescription { get; set; }
     public DateTime ReservedAt { get; set; }
