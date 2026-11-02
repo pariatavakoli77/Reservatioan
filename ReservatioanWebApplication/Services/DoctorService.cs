@@ -29,7 +29,7 @@ public class DoctorService : IDoctorService
         throw new NotImplementedException();
     }
 
-    public int GetById(int id)
+    public int? GetById(int id)
     {
         throw new NotImplementedException();
     }
@@ -39,8 +39,5 @@ public class DoctorService : IDoctorService
         throw new NotImplementedException();
     }
 
-    int? IDoctorService.GetById(int id)
-    {
-        return GetById(id);
-    }
+   
 }

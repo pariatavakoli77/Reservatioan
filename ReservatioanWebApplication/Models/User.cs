@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using ReservatioanWebApplication.Enums;
+﻿using ReservatioanWebApplication.Enums;
 namespace ReservatioanWebApplication.Models;
 
 public class User

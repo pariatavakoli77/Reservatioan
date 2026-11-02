@@ -2,7 +2,7 @@
 
 public enum DoctorSlotDurationMinutes
 {
-    fifteen = 15,
-    thirty = 30,
-    forthyFive = 45,
+    Fifteen = 15,
+    Thirty = 30,
+    FortyFive = 45,
 }

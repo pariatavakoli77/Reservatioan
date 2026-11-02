@@ -15,7 +15,7 @@ public class Doctor
     public string MedicalCode { get; set; }
     public DoctorSpecialty Specialty { get; set; }
     public DoctorLicense LastLicense { get; set; }
-    public List<DayOfWeek> WorkDays { get; set; }
+    public List<DayOfWeek> WorkDays { get; set; } = new();
     public DoctorSlotDurationMinutes SlotDuration { get; set; }
     public decimal ConsultationFee { get; set; }
     public int AddressId { get; set; }
