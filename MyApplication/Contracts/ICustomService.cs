@@ -1,7 +1,5 @@
-﻿using ReservatioanWebApplication.Models;
-using System.Runtime.InteropServices;
-
-namespace ReservatioanWebApplication.Contracts;
+﻿
+namespace ReservatioanWebApplication.MyApplication.Contracts;
 
 public interface ICustomService<T>
 {

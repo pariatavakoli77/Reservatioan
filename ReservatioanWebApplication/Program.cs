@@ -1,10 +1,10 @@
 using Asp.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Microsoft.Win32;
 using ReservatioanWebApplication.Data;
-using ReservatioanWebApplication.Interfaces;
-using ReservatioanWebApplication.Services;
+using ReservatioanWebApplication.MyApplication.Interfaces;
+using ReservatioanWebApplication.MyInfrastructure.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

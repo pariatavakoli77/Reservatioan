@@ -1,5 +1,5 @@
-﻿using ReservatioanWebApplication.Enums;
-namespace ReservatioanWebApplication.Models;
+﻿using ReservatioanWebApplication.MyDomain.Enums;
+namespace ReservatioanWebApplication.MyDomain.Entities;
 
 public class User
 {

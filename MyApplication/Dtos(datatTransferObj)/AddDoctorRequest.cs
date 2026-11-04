@@ -1,4 +1,4 @@
-﻿using ReservatioanWebApplication.Enums;
+﻿using ReservatioanWebApplication.MyDomain.Enums;
 
 namespace ReservatioanWebApplication.Dtos_datatTransferObj_;
 

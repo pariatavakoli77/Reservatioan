@@ -1,9 +1,10 @@
-﻿using ReservatioanWebApplication.Contracts;
-using ReservatioanWebApplication.Data;
-using ReservatioanWebApplication.Interfaces;
-using ReservatioanWebApplication.Models;
+﻿
+using ReservatioanWebApplication.MyApplication.Contracts;
+using ReservatioanWebApplication.MyApplication.Interfaces;
+using ReservatioanWebApplication.MyDomain.Entities;
+using ReservatioanWebApplication.MyInfrastructure.Persistence.Contexts;
 
-namespace ReservatioanWebApplication.Services;
+namespace ReservatioanWebApplication.MyInfrastructure.Services;
 
 public class DoctorService : IDoctorService
 {

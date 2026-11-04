@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection.Metadata;
 
-namespace ReservatioanWebApplication.Models;
+namespace ReservatioanWebApplication.MyDomain.Entities;
 
 public class Appointment
 {

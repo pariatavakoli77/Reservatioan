@@ -1,7 +1,7 @@
 ﻿
-using ReservatioanWebApplication.Enums;
+using ReservatioanWebApplication.MyDomain.Enums;
 
-namespace ReservatioanWebApplication.Models;
+namespace ReservatioanWebApplication.MyDomain.Entities;
 
 public class Doctor
 {

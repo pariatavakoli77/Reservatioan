@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ReservatioanWebApplication.Models;
+namespace ReservatioanWebApplication.MyDomain.Entities;
 
 public class Payment
 {

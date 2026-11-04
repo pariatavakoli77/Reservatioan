@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using ReservatioanWebApplication.Models;
+
+using ReservatioanWebApplication.MyDomain.Entities;
 
 namespace ReservatioanWebApplication.Data;
 

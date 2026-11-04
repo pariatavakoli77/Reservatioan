@@ -1,8 +1,9 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using ReservatioanWebApplication.Dtos_datatTransferObj_;
-using ReservatioanWebApplication.Interfaces;
-using ReservatioanWebApplication.Models;
+
+using ReservatioanWebApplication.MyApplication.Interfaces;
+using ReservatioanWebApplication.MyDomain.Entities;
 using ReservatioanWebApplication.Wrapper;
 
 namespace ReservatioanWebApplication.Controllers

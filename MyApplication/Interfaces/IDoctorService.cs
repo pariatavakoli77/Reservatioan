@@ -1,7 +1,7 @@
-﻿using ReservatioanWebApplication.Contracts;
-using ReservatioanWebApplication.Models;
+﻿using ReservatioanWebApplication.MyApplication.Contracts;
+using ReservatioanWebApplication.MyDomain.Entities;
 
-namespace ReservatioanWebApplication.Interfaces;
+namespace ReservatioanWebApplication.MyApplication.Interfaces;
 
 public interface IDoctorService : ICustomService<Doctor>
 {
