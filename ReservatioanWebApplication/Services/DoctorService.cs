@@ -1,4 +1,5 @@
-﻿using ReservatioanWebApplication.Data;
+﻿using ReservatioanWebApplication.Contracts;
+using ReservatioanWebApplication.Data;
 using ReservatioanWebApplication.Interfaces;
 using ReservatioanWebApplication.Models;
 
@@ -40,4 +41,13 @@ public class DoctorService : IDoctorService
     }
 
    
+    Doctor? ICustomService<Doctor>.GetById(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    Doctor? IDoctorService.GetById(int id)
+    {
+        throw new NotImplementedException();
+    }
 }

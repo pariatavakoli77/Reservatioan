@@ -1,13 +1,13 @@
-﻿using ReservatioanWebApplication.Models;
-using System.Numerics;
+﻿using ReservatioanWebApplication.Contracts;
+using ReservatioanWebApplication.Models;
 
 namespace ReservatioanWebApplication.Interfaces;
 
-public interface IDoctorService
+public interface IDoctorService : ICustomService<Doctor>
 {
     int Add(Doctor doctor);
     List<Doctor> GetAll();
-    int? GetById(int id);
+    Doctor? GetById(int id);
     bool Update(Doctor doctor);
     bool Delete(int id);
 }

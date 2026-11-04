@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Mvc;
 using ReservatioanWebApplication.Dtos_datatTransferObj_;
 using ReservatioanWebApplication.Interfaces;
 using ReservatioanWebApplication.Models;
+using ReservatioanWebApplication.Wrapper;
 
 namespace ReservatioanWebApplication.Controllers
 {
+    [ApiVersion(1)]
     [ApiController]
-    [Route("[Controller]/[action]")]
+    [Route("v{v:apiversion}[Controller]/[action]")]
     public class DoctorController : ControllerBase
     {
         private readonly IDoctorService _doctorService;
@@ -42,19 +45,23 @@ namespace ReservatioanWebApplication.Controllers
                     PostalCode = dto.Address.PostalCode
                 }
             };
-            int doctorId = _doctorService.Add(doctor);
+            
+            int result = _doctorService.Add(doctor);
 
-            var response = new AddDoctorResponse
-            {
-                Id = doctorId
-            };
+            Result<int> response = Result.Success(
+                result,
+                message: "Doctor added successfully"
+            );
 
             return Ok(response);
         }
 
 
-        //add service or add business
-
+        [HttpPut]
+        //public IActionResult Update(int id, [FromBody] UpdateDoctorRequest dto)
+        //{
+        //    return Ok();
+        //}
 
         [HttpGet]
         public IActionResult GetAll()
@@ -69,11 +76,7 @@ namespace ReservatioanWebApplication.Controllers
 
         }
 
-        [HttpPut]
-        public IActionResult Update()
-        {
-            return Ok();
-        }
+        
 
         [HttpDelete]
         public IActionResult Delete(int id)
