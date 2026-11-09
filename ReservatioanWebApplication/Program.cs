@@ -4,6 +4,8 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using ReservatioanWebApplication.Data;
 using ReservatioanWebApplication.MyApplication.Interfaces;
 using ReservatioanWebApplication.MyInfrastructure.Services;
+using MyInfrastructure;
+using MyApplication ;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,11 +13,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<AppDbContext>(Options =>
-Options.UseSqlServer(connectionString ??
-throw new InvalidOperationException("Connection string not found"))
-);
+string connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
+            throw new InvalidOperationException("Connection string not found");
+builder.Services
+    .AddApplication()
+    .AddInfrastructure(connectionString);
+
+
+//builder.Services.AddCors();
+builder.Services.AddCorsPolicy();
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -46,16 +53,6 @@ builder.Services.AddHealthChecks()
         .AddCheck("Sample", () => HealthCheckResult.Healthy("A healthy result."));
 
 
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-                      policy =>
-                      {
-                          policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
-                      });
-});
-
 builder.Services.AddScoped<IDoctorService, DoctorService>();
 
 var app = builder.Build();
@@ -71,8 +68,7 @@ app.MapHealthChecks("/healthz");
 
 app.UseHttpsRedirection();
 
-app.UseCors(MyAllowSpecificOrigins);
-
+app.UseCors(PresentationLayerExtentions.MyAllowSpecificOrigins);
 app.UseAuthorization();
 
 app.MapControllers();

@@ -1,8 +1,8 @@
-﻿
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc;
-using ReservatioanWebApplication.Wrapper;
+using MyApplication.Wrapper;
 
-namespace ReservatioanWebApplication.Extentions;
+namespace Reservatioan.MySharedPresentation.Extentions;
 
 public static class ResultExtensions
 {
